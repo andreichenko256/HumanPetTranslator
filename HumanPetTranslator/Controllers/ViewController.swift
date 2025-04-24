@@ -6,5 +6,10 @@ final class ViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .red
     }
+    
+    override func loadView() {
+        super.loadView()
+        view = BaseView()
+    }
 }
 
