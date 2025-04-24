@@ -6,30 +6,23 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		ED8B3DE62DBA6D6300FE7B93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8B3DDE2DBA6D6300FE7B93 /* AppDelegate.swift */; };
+		ED8B3DE72DBA6D6300FE7B93 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8B3DE32DBA6D6300FE7B93 /* SceneDelegate.swift */; };
+		ED8B3DE82DBA6D6300FE7B93 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8B3DE42DBA6D6300FE7B93 /* ViewController.swift */; };
+		ED8B3DE92DBA6D6300FE7B93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED8B3DDF2DBA6D6300FE7B93 /* Assets.xcassets */; };
+		ED8B3DEB2DBA6D6300FE7B93 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED8B3DE22DBA6D6300FE7B93 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		ED6A63D12DBA6A290039B359 /* HumanPetTranslator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HumanPetTranslator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED8B3DDE2DBA6D6300FE7B93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		ED8B3DDF2DBA6D6300FE7B93 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		ED8B3DE02DBA6D6300FE7B93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED8B3DE12DBA6D6300FE7B93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		ED8B3DE32DBA6D6300FE7B93 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		ED8B3DE42DBA6D6300FE7B93 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		ED6A63E32DBA6A2A0039B359 /* Exceptions for "HumanPetTranslator" folder in "HumanPetTranslator" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = ED6A63D02DBA6A290039B359 /* HumanPetTranslator */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		ED6A63D32DBA6A290039B359 /* HumanPetTranslator */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				ED6A63E32DBA6A2A0039B359 /* Exceptions for "HumanPetTranslator" folder in "HumanPetTranslator" target */,
-			);
-			path = HumanPetTranslator;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		ED6A63CE2DBA6A290039B359 /* Frameworks */ = {
@@ -45,7 +38,7 @@
 		ED6A63C82DBA6A290039B359 = {
 			isa = PBXGroup;
 			children = (
-				ED6A63D32DBA6A290039B359 /* HumanPetTranslator */,
+				ED8B3DE52DBA6D6300FE7B93 /* HumanPetTranslator */,
 				ED6A63D22DBA6A290039B359 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -56,6 +49,59 @@
 				ED6A63D12DBA6A290039B359 /* HumanPetTranslator.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		ED8B3DE52DBA6D6300FE7B93 /* HumanPetTranslator */ = {
+			isa = PBXGroup;
+			children = (
+				ED8B3DF02DBA6DAA00FE7B93 /* App */,
+				ED8B3DEC2DBA6D6900FE7B93 /* Resources */,
+				ED8B3DEF2DBA6D7400FE7B93 /* Models */,
+				ED8B3DEE2DBA6D6E00FE7B93 /* Views */,
+				ED8B3DED2DBA6D6B00FE7B93 /* Controllers */,
+				ED8B3DE02DBA6D6300FE7B93 /* Info.plist */,
+			);
+			path = HumanPetTranslator;
+			sourceTree = "<group>";
+		};
+		ED8B3DEC2DBA6D6900FE7B93 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				ED8B3DDF2DBA6D6300FE7B93 /* Assets.xcassets */,
+				ED8B3DE22DBA6D6300FE7B93 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		ED8B3DED2DBA6D6B00FE7B93 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				ED8B3DE42DBA6D6300FE7B93 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		ED8B3DEE2DBA6D6E00FE7B93 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		ED8B3DEF2DBA6D7400FE7B93 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		ED8B3DF02DBA6DAA00FE7B93 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				ED8B3DE32DBA6D6300FE7B93 /* SceneDelegate.swift */,
+				ED8B3DDE2DBA6D6300FE7B93 /* AppDelegate.swift */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -72,9 +118,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				ED6A63D32DBA6A290039B359 /* HumanPetTranslator */,
 			);
 			name = HumanPetTranslator;
 			packageProductDependencies = (
@@ -122,6 +165,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED8B3DE92DBA6D6300FE7B93 /* Assets.xcassets in Resources */,
+				ED8B3DEB2DBA6D6300FE7B93 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,10 +177,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED8B3DE62DBA6D6300FE7B93 /* AppDelegate.swift in Sources */,
+				ED8B3DE72DBA6D6300FE7B93 /* SceneDelegate.swift in Sources */,
+				ED8B3DE82DBA6D6300FE7B93 /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		ED8B3DE22DBA6D6300FE7B93 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ED8B3DE12DBA6D6300FE7B93 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		ED6A63E52DBA6A2A0039B359 /* Debug */ = {
