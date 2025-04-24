@@ -4,7 +4,8 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string>KonkhmerSleokchher-Regular.ttf</string>
+		<string>konkhmer-sleokchher-khmer-400-normal.ttf</string>
+
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>

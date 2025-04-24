@@ -72,12 +72,12 @@ private extension CustomTabBarController {
         
         let translatorButton = createButton(
             title: "Translator",
-            image: UIImage(systemName: "bubble.left.and.bubble.right"),
+            image: UIImage(named: "translator"),
             for: .translator
         )
         let clickerButton = createButton(
             title: "Clicker",
-            image: UIImage(systemName: "gearshape"),
+            image: UIImage(named: "clicker"),
             for: .clicker
         )
         
@@ -121,7 +121,7 @@ private extension CustomTabBarController {
 
         let label = UILabel()
         label.text = title
-        label.font = .systemFont(ofSize: 12, weight: .medium)
+        label.font = .konKhmerSleokchher(size: 12)
         label.textColor = UIColor(red: 41/255, green: 45/255, blue: 50/255, alpha: 1)
         
         [imageView, label].forEach({ stack.addArrangedSubview($0) })

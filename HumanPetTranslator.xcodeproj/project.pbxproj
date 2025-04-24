@@ -20,8 +20,10 @@
 		ED8B3EAE2DBAC83700FE7B93 /* ClickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8B3EAD2DBAC83700FE7B93 /* ClickerView.swift */; };
 		ED8B3EB22DBAC89300FE7B93 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8B3EB12DBAC89300FE7B93 /* ResultView.swift */; };
 		ED8B3EB42DBAC89A00FE7B93 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8B3EB32DBAC89A00FE7B93 /* ResultViewController.swift */; };
-		ED8B3EF72DBAE6E000FE7B93 /* KonkhmerSleokchher-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ED8B3EF62DBAE6E000FE7B93 /* KonkhmerSleokchher-Regular.ttf */; };
 		ED8B3FA62DBAFDA300FE7B93 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = ED8B3FA52DBAFDA300FE7B93 /* SnapKit */; };
+		ED8B3FB42DBAFF5500FE7B93 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = ED8B3FB22DBAFF5500FE7B93 /* LICENSE */; };
+		ED8B3FB52DBAFF5500FE7B93 /* konkhmer-sleokchher-khmer-400-normal.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ED8B3FA72DBAFF5500FE7B93 /* konkhmer-sleokchher-khmer-400-normal.ttf */; };
+		ED8B3FD32DBB056A00FE7B93 /* UIFont+KonKhmerSleokchher.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8B3FD22DBB056900FE7B93 /* UIFont+KonKhmerSleokchher.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,7 +42,9 @@
 		ED8B3EAD2DBAC83700FE7B93 /* ClickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClickerView.swift; sourceTree = "<group>"; };
 		ED8B3EB12DBAC89300FE7B93 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		ED8B3EB32DBAC89A00FE7B93 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
-		ED8B3EF62DBAE6E000FE7B93 /* KonkhmerSleokchher-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KonkhmerSleokchher-Regular.ttf"; sourceTree = "<group>"; };
+		ED8B3FA72DBAFF5500FE7B93 /* konkhmer-sleokchher-khmer-400-normal.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "konkhmer-sleokchher-khmer-400-normal.ttf"; sourceTree = "<group>"; };
+		ED8B3FB22DBAFF5500FE7B93 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		ED8B3FD22DBB056900FE7B93 /* UIFont+KonKhmerSleokchher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+KonKhmerSleokchher.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +78,7 @@
 		ED8B3DE52DBA6D6300FE7B93 /* HumanPetTranslator */ = {
 			isa = PBXGroup;
 			children = (
+				ED8B3FD42DBB057000FE7B93 /* Extensions */,
 				ED8B3DF02DBA6DAA00FE7B93 /* App */,
 				ED8B3DEC2DBA6D6900FE7B93 /* Resources */,
 				ED8B3DEF2DBA6D7400FE7B93 /* Models */,
@@ -192,9 +197,34 @@
 		ED8B3EF32DBAE5A100FE7B93 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				ED8B3EF62DBAE6E000FE7B93 /* KonkhmerSleokchher-Regular.ttf */,
+				ED8B3FB32DBAFF5500FE7B93 /* konkhmer-sleokchher_5.2.5 */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		ED8B3FAA2DBAFF5500FE7B93 /* ttf */ = {
+			isa = PBXGroup;
+			children = (
+				ED8B3FA72DBAFF5500FE7B93 /* konkhmer-sleokchher-khmer-400-normal.ttf */,
+			);
+			path = ttf;
+			sourceTree = "<group>";
+		};
+		ED8B3FB32DBAFF5500FE7B93 /* konkhmer-sleokchher_5.2.5 */ = {
+			isa = PBXGroup;
+			children = (
+				ED8B3FAA2DBAFF5500FE7B93 /* ttf */,
+				ED8B3FB22DBAFF5500FE7B93 /* LICENSE */,
+			);
+			path = "konkhmer-sleokchher_5.2.5";
+			sourceTree = "<group>";
+		};
+		ED8B3FD42DBB057000FE7B93 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				ED8B3FD22DBB056900FE7B93 /* UIFont+KonKhmerSleokchher.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,8 +292,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED8B3FB42DBAFF5500FE7B93 /* LICENSE in Resources */,
+				ED8B3FB52DBAFF5500FE7B93 /* konkhmer-sleokchher-khmer-400-normal.ttf in Resources */,
 				ED8B3DE92DBA6D6300FE7B93 /* Assets.xcassets in Resources */,
-				ED8B3EF72DBAE6E000FE7B93 /* KonkhmerSleokchher-Regular.ttf in Resources */,
 				ED8B3DEB2DBA6D6300FE7B93 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -276,6 +307,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED8B3DE62DBA6D6300FE7B93 /* AppDelegate.swift in Sources */,
+				ED8B3FD32DBB056A00FE7B93 /* UIFont+KonKhmerSleokchher.swift in Sources */,
 				ED8B3DF42DBA6F2A00FE7B93 /* K.swift in Sources */,
 				ED8B3E9A2DBAC61500FE7B93 /* TranslatorViewController.swift in Sources */,
 				ED8B3DE72DBA6D6300FE7B93 /* SceneDelegate.swift in Sources */,

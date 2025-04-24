@@ -1,8 +1,7 @@
-//
-//  UIFont+KonKhmerSleokchher.swift
-//  HumanPetTranslator
-//
-//  Created by Kyrylo Andreichenko on 25.04.2025.
-//
+import UIKit
 
-import Foundation
+extension UIFont {
+    static func konKhmerSleokchher(size: CGFloat) -> UIFont {
+        return UIFont(name: "Konkhmer Sleokchher", size: size) ?? .systemFont(ofSize: size)
+    }
+}
