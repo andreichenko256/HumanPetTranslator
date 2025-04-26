@@ -1,10 +1,14 @@
 import UIKit
+import AVFAudio
+
+
 
 final class TranslatorView: BaseView {
     
     private var isCatButtonActive = false
     private var isDogButtonActive = true
-
+    
+    
     private lazy var translatorLabel: UILabel = {
         $0.text = "Translator"
         $0.textColor = K.Colors.mainTextColor
@@ -33,7 +37,6 @@ final class TranslatorView: BaseView {
         $0.imageView?.contentMode = .scaleAspectFit
         $0.alpha = 1
         $0.adjustsImageWhenHighlighted = false
-        
         $0.addTarget(self, action: #selector(handleDogButtonTap), for: .touchUpInside)
         return $0
     }(UIButton())
@@ -53,10 +56,13 @@ final class TranslatorView: BaseView {
     private lazy var micContainerView: UIView = {
         $0.layer.cornerRadius = 16
         $0.backgroundColor = .white
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(micContainerTapped))
+        $0.addGestureRecognizer(tapGesture)
+        $0.isUserInteractionEnabled = true
         return $0
     }(UIView(frame: .zero))
     
-    private lazy var humanLabel: UILabel = {
+    private lazy var leftLabel: UILabel = {
         $0.text = "HUMAN"
         $0.font = .konKhmerSleokchher(size: 16)
         $0.textColor = K.Colors.mainTextColor
@@ -64,7 +70,7 @@ final class TranslatorView: BaseView {
         return $0
     }(UILabel())
     
-    private lazy var petLabel: UILabel = {
+    private lazy var rightLabel: UILabel = {
         $0.text = "PET"
         $0.font = .konKhmerSleokchher(size: 16)
         $0.textColor = K.Colors.mainTextColor
@@ -226,12 +232,12 @@ private extension TranslatorView {
     }
     
     func setupTopContainer() {
-        [humanLabel, arrowSwapButton, petLabel].forEach {
+        [leftLabel, arrowSwapButton, rightLabel].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
             topContainerView.addSubview($0)
         }
         
-        humanLabel.snp.makeConstraints {
+        leftLabel.snp.makeConstraints {
             $0.leading.equalToSuperview()
             $0.top.bottom.equalToSuperview()
             $0.trailing.equalTo(arrowSwapButton.snp.leading).offset(-8)
@@ -243,21 +249,16 @@ private extension TranslatorView {
             $0.width.height.equalTo(24)
         }
         
-        petLabel.snp.makeConstraints {
+        rightLabel.snp.makeConstraints {
             $0.top.bottom.equalToSuperview()
             $0.trailing.equalToSuperview()
             $0.leading.equalTo(arrowSwapButton.snp.trailing).offset(8)
         }
     }
     
-    @objc func arrowSwappButtonTapped() {
-        print("hello")
-    }
-    
-    
     @objc func handleCatButtonTap() {
         guard !isCatButtonActive else { return }
-
+        
         UIView.animate(withDuration: 0.2, animations: {
             self.mainImageView.alpha = 0
             self.dogButton.alpha = 0.6
@@ -276,13 +277,13 @@ private extension TranslatorView {
     
     @objc func handleDogButtonTap() {
         guard !isDogButtonActive else { return }
- 
+        
         UIView.animate(withDuration: 0.2, animations: {
             self.mainImageView.alpha = 0
             self.catButton.alpha = 0.6
         }) { _ in
             self.mainImageView.image = UIImage(named: "dog")
-
+            
             UIView.animate(withDuration: 0.2) {
                 self.dogButton.alpha = 1
                 self.mainImageView.alpha = 1
@@ -291,5 +292,78 @@ private extension TranslatorView {
         
         isDogButtonActive.toggle()
         isCatButtonActive.toggle()
+    }
+    
+    @objc func micContainerTapped() {
+        animateBounce(for: micContainerView)
+        AVAudioApplication.requestRecordPermission { granted in
+            DispatchQueue.main.async {
+                if granted {
+                    self.startRecordingUI()
+                    print("Access granted ✅")
+                } else {
+                    print("Access denied ❌")
+                    self.showMicrophoneAccessAlert()
+                }
+            }
+        }
+    }
+    
+    private func animateBounce(for view: UIView) {
+        UIView.animate(withDuration: 0.1,
+                       animations: {
+            view.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
+        }, completion: { _ in
+            UIView.animate(withDuration: 0.1) {
+                view.transform = .identity
+            }
+        })
+    }
+    
+    @objc func arrowSwappButtonTapped() {
+        UIView.transition(with: topContainerView, duration: 0.3, options: [.transitionFlipFromTop], animations: {
+            let tempText = self.leftLabel.text
+            self.leftLabel.text = self.rightLabel.text
+            self.rightLabel.text = tempText
+        }, completion: nil)
+    }
+    
+    private func startRecordingUI() {
+        micImageView.isHidden = true
+        speakLabel.text = "Recording..."
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.stopRecordingUI()
+        }
+    }
+    
+    private func stopRecordingUI() {
+        print("recording stopped")
+        let resultVC = ResultViewController()
+    }
+}
+
+extension TranslatorView {
+    private func showMicrophoneAccessAlert() {
+        let alert = UIAlertController(
+            title: "Enable Microphone Access",
+            message:
+            """
+            Please allow access to your mircophone to use the app’s
+            features
+            """,
+            preferredStyle: .alert
+        )
+        
+        alert.addAction(UIAlertAction(title: "Settings", style: .default, handler: { _ in
+            if let appSettings = URL(string: UIApplication.openSettingsURLString) {
+                UIApplication.shared.open(appSettings)
+            }
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        if let viewController = self.window?.rootViewController {
+            viewController.present(alert, animated: true)
+        }
     }
 }
