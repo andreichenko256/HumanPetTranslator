@@ -6,4 +6,8 @@ class ResultViewController: UIViewController {
         super.viewDidLoad()
     }
     
+    override func loadView() {
+        view = ResultView()
+    }
+    
 }

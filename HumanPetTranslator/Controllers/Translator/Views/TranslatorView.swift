@@ -1,13 +1,10 @@
 import UIKit
 import AVFAudio
 
-
-
 final class TranslatorView: BaseView {
     
     private var isCatButtonActive = false
     private var isDogButtonActive = true
-    
     
     private lazy var translatorLabel: UILabel = {
         $0.text = "Translator"
@@ -331,14 +328,26 @@ private extension TranslatorView {
     private func startRecordingUI() {
         micImageView.isHidden = true
         speakLabel.text = "Recording..."
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+        // set deadline after!!!!
+        DispatchQueue.main.asyncAfter(deadline: .now()) {
             self.stopRecordingUI()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                self.speakLabel.text = "Start Speak"
+                self.micImageView.isHidden = false
+            }
         }
     }
     
     private func stopRecordingUI() {
         print("recording stopped")
         let resultVC = ResultViewController()
+        
+        if let navigationController = self.window?.rootViewController as? UINavigationController {
+            navigationController.isNavigationBarHidden = true
+            navigationController.pushViewController(resultVC, animated: true)
+        } else {
+            print("Ошибка: UINavigationController не найден.")
+        }
     }
 }
 

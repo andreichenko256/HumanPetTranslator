@@ -26,6 +26,7 @@
 		ED8B3FD32DBB056A00FE7B93 /* UIFont+KonKhmerSleokchher.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8B3FD22DBB056900FE7B93 /* UIFont+KonKhmerSleokchher.swift */; };
 		EDFBA0C12DBC7261002955E9 /* SettingsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFBA0C02DBC7261002955E9 /* SettingsTableView.swift */; };
 		EDFBA0EF2DBC76ED002955E9 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFBA0EE2DBC76ED002955E9 /* SettingsTableViewCell.swift */; };
+		EDFBA17C2DBD8924002955E9 /* TopContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFBA17B2DBD8919002955E9 /* TopContainerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		ED8B3FD22DBB056900FE7B93 /* UIFont+KonKhmerSleokchher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+KonKhmerSleokchher.swift"; sourceTree = "<group>"; };
 		EDFBA0C02DBC7261002955E9 /* SettingsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableView.swift; sourceTree = "<group>"; };
 		EDFBA0EE2DBC76ED002955E9 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
+		EDFBA17B2DBD8919002955E9 /* TopContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopContainerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +179,7 @@
 		ED8B3EA72DBAC6F500FE7B93 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				EDFBA17B2DBD8919002955E9 /* TopContainerView.swift */,
 				ED8B3E9D2DBAC68D00FE7B93 /* TranslatorView.swift */,
 			);
 			path = Views;
@@ -319,6 +322,7 @@
 				EDFBA0EF2DBC76ED002955E9 /* SettingsTableViewCell.swift in Sources */,
 				ED8B3DE72DBA6D6300FE7B93 /* SceneDelegate.swift in Sources */,
 				ED8B3E9E2DBAC68D00FE7B93 /* TranslatorView.swift in Sources */,
+				EDFBA17C2DBD8924002955E9 /* TopContainerView.swift in Sources */,
 				ED8B3EAE2DBAC83700FE7B93 /* ClickerView.swift in Sources */,
 				ED8B3E9C2DBAC63400FE7B93 /* ClickerViewController.swift in Sources */,
 				EDFBA0C12DBC7261002955E9 /* SettingsTableView.swift in Sources */,
