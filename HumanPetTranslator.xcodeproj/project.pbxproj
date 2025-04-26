@@ -24,6 +24,8 @@
 		ED8B3FB42DBAFF5500FE7B93 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = ED8B3FB22DBAFF5500FE7B93 /* LICENSE */; };
 		ED8B3FB52DBAFF5500FE7B93 /* konkhmer-sleokchher-khmer-400-normal.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ED8B3FA72DBAFF5500FE7B93 /* konkhmer-sleokchher-khmer-400-normal.ttf */; };
 		ED8B3FD32DBB056A00FE7B93 /* UIFont+KonKhmerSleokchher.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8B3FD22DBB056900FE7B93 /* UIFont+KonKhmerSleokchher.swift */; };
+		EDFBA0C12DBC7261002955E9 /* SettingsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFBA0C02DBC7261002955E9 /* SettingsTableView.swift */; };
+		EDFBA0EF2DBC76ED002955E9 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFBA0EE2DBC76ED002955E9 /* SettingsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +47,8 @@
 		ED8B3FA72DBAFF5500FE7B93 /* konkhmer-sleokchher-khmer-400-normal.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "konkhmer-sleokchher-khmer-400-normal.ttf"; sourceTree = "<group>"; };
 		ED8B3FB22DBAFF5500FE7B93 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		ED8B3FD22DBB056900FE7B93 /* UIFont+KonKhmerSleokchher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+KonKhmerSleokchher.swift"; sourceTree = "<group>"; };
+		EDFBA0C02DBC7261002955E9 /* SettingsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableView.swift; sourceTree = "<group>"; };
+		EDFBA0EE2DBC76ED002955E9 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +186,8 @@
 			isa = PBXGroup;
 			children = (
 				ED8B3EAD2DBAC83700FE7B93 /* ClickerView.swift */,
+				EDFBA0C02DBC7261002955E9 /* SettingsTableView.swift */,
+				EDFBA0EE2DBC76ED002955E9 /* SettingsTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -310,10 +316,12 @@
 				ED8B3FD32DBB056A00FE7B93 /* UIFont+KonKhmerSleokchher.swift in Sources */,
 				ED8B3DF42DBA6F2A00FE7B93 /* K.swift in Sources */,
 				ED8B3E9A2DBAC61500FE7B93 /* TranslatorViewController.swift in Sources */,
+				EDFBA0EF2DBC76ED002955E9 /* SettingsTableViewCell.swift in Sources */,
 				ED8B3DE72DBA6D6300FE7B93 /* SceneDelegate.swift in Sources */,
 				ED8B3E9E2DBAC68D00FE7B93 /* TranslatorView.swift in Sources */,
 				ED8B3EAE2DBAC83700FE7B93 /* ClickerView.swift in Sources */,
 				ED8B3E9C2DBAC63400FE7B93 /* ClickerViewController.swift in Sources */,
+				EDFBA0C12DBC7261002955E9 /* SettingsTableView.swift in Sources */,
 				ED8B3DE82DBA6D6300FE7B93 /* CustomTabBarController.swift in Sources */,
 				ED8B3EB22DBAC89300FE7B93 /* ResultView.swift in Sources */,
 				ED8B3DF22DBA6E5500FE7B93 /* BaseView.swift in Sources */,

@@ -12,12 +12,13 @@ struct K {
         gradient.endPoint = CGPoint(x: 1, y: 1)
         return gradient
     }
-    // rgba(41, 45, 50, 1)
+    
     struct Colors {
         static let catBackground = UIColor(red: 209/255, green: 231/255, blue: 252/255, alpha: 1.0)
         static let dogBackground = UIColor(red: 236/255, green: 251/255, blue: 199/255, alpha: 1.0)
-        
         static let mainTextColor: UIColor = UIColor(red: 41/255, green: 45/255, blue: 50/255, alpha: 1.0)
+        static let cellColorBackground: UIColor = UIColor(red: 214/255, green: 220/255, blue: 255/255, alpha: 1.0)
+        
     }
 }
 
