@@ -33,6 +33,7 @@ final class TranslatorView: BaseView {
         $0.imageView?.contentMode = .scaleAspectFit
         $0.alpha = 1
         $0.adjustsImageWhenHighlighted = false
+        
         $0.addTarget(self, action: #selector(handleDogButtonTap), for: .touchUpInside)
         return $0
     }(UIButton())
@@ -42,6 +43,10 @@ final class TranslatorView: BaseView {
     }(UIView(frame: .zero))
     
     private lazy var bottomContainerView: UIView = {
+        $0.layer.shadowColor = UIColor.black.cgColor
+        $0.layer.shadowOpacity = 0.25
+        $0.layer.shadowOffset = CGSize(width: 0, height: 4)
+        $0.layer.shadowRadius = 14.3
         return $0
     }(UIView(frame: .zero))
     
