@@ -81,12 +81,12 @@
 				ED8B3FD42DBB057000FE7B93 /* Extensions */,
 				ED8B3DF02DBA6DAA00FE7B93 /* App */,
 				ED8B3DEC2DBA6D6900FE7B93 /* Resources */,
+				ED8B3EF32DBAE5A100FE7B93 /* Fonts */,
 				ED8B3DEF2DBA6D7400FE7B93 /* Models */,
 				ED8B3DEE2DBA6D6E00FE7B93 /* Common Views */,
 				ED8B3DED2DBA6D6B00FE7B93 /* Controllers */,
 				ED8B3DE02DBA6D6300FE7B93 /* Info.plist */,
 				ED8B3DF32DBA6F2A00FE7B93 /* K.swift */,
-				ED8B3EF32DBAE5A100FE7B93 /* Fonts */,
 			);
 			path = HumanPetTranslator;
 			sourceTree = "<group>";

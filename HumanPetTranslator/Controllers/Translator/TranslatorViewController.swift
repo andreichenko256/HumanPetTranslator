@@ -11,8 +11,3 @@ class TranslatorViewController: UIViewController {
         view = TranslatorView(frame: .zero)
     }
 }
-
-@available(iOS 17.0, *)
-#Preview {
-    TranslatorViewController()
-}

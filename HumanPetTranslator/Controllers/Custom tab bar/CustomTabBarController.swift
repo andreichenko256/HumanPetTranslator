@@ -1,7 +1,7 @@
 import UIKit
 import SnapKit
 
-class CustomTabBarController: UIViewController {
+final class CustomTabBarController: UIViewController {
     
     enum Tab: Int {
         case translator
@@ -75,6 +75,7 @@ private extension CustomTabBarController {
             image: UIImage(named: "translator"),
             for: .translator
         )
+        
         let clickerButton = createButton(
             title: "Clicker",
             image: UIImage(named: "clicker"),
@@ -122,7 +123,7 @@ private extension CustomTabBarController {
         let label = UILabel()
         label.text = title
         label.font = .konKhmerSleokchher(size: 12)
-        label.textColor = UIColor(red: 41/255, green: 45/255, blue: 50/255, alpha: 1)
+        label.textColor = K.Colors.mainTextColor
         
         [imageView, label].forEach({ stack.addArrangedSubview($0) })
         
@@ -144,6 +145,7 @@ private extension CustomTabBarController {
         buttons.forEach { tab, button in
             let isSelected = tab == selectedTab
             let fontOpacity: CGFloat = isSelected ? 1 : 0.6
+            
             button.subviews.forEach { subview in
                 if let stack = subview as? UIStackView {
                     stack.arrangedSubviews.forEach { view in
@@ -159,12 +161,10 @@ private extension CustomTabBarController {
     }
     
     func updateViewController() {
-        // Remove current view controller
         currentViewController?.willMove(toParent: nil)
         currentViewController?.view.removeFromSuperview()
         currentViewController?.removeFromParent()
         
-        // Create and add new view controller
         let newViewController: UIViewController
         switch selectedTab {
         case .translator:
