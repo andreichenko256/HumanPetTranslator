@@ -26,9 +26,15 @@
 		ED8B3FD32DBB056A00FE7B93 /* UIFont+KonKhmerSleokchher.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8B3FD22DBB056900FE7B93 /* UIFont+KonKhmerSleokchher.swift */; };
 		EDFBA0C12DBC7261002955E9 /* SettingsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFBA0C02DBC7261002955E9 /* SettingsTableView.swift */; };
 		EDFBA0EF2DBC76ED002955E9 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFBA0EE2DBC76ED002955E9 /* SettingsTableViewCell.swift */; };
-		EDFBA17C2DBD8924002955E9 /* TopContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFBA17B2DBD8919002955E9 /* TopContainerView.swift */; };
 		EDFBA2782DBEB36D002955E9 /* Gifu in Frameworks */ = {isa = PBXBuildFile; productRef = EDFBA2772DBEB36D002955E9 /* Gifu */; };
 		EDFBA27A2DBEB377002955E9 /* wave.gif in Resources */ = {isa = PBXBuildFile; fileRef = EDFBA2792DBEB377002955E9 /* wave.gif */; };
+		EDFBA27C2DBEC78C002955E9 /* PetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFBA27B2DBEC783002955E9 /* PetView.swift */; };
+		EDFBA27E2DBEC7A3002955E9 /* DialogueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFBA27D2DBEC792002955E9 /* DialogueView.swift */; };
+		EDFBA2802DBEC7AC002955E9 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFBA27F2DBEC7A9002955E9 /* HeaderView.swift */; };
+		EDFBA28C2DBED0CA002955E9 /* TopContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFBA28B2DBED0C3002955E9 /* TopContainerView.swift */; };
+		EDFBA28E2DBED3C1002955E9 /* BottomContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFBA28D2DBED3C1002955E9 /* BottomContainerView.swift */; };
+		EDFBA2912DBEDE3F002955E9 /* PermissionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFBA2902DBEDE30002955E9 /* PermissionHelper.swift */; };
+		EDFBA2932DBEDE81002955E9 /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFBA2922DBEDE81002955E9 /* AlertHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,8 +58,14 @@
 		ED8B3FD22DBB056900FE7B93 /* UIFont+KonKhmerSleokchher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+KonKhmerSleokchher.swift"; sourceTree = "<group>"; };
 		EDFBA0C02DBC7261002955E9 /* SettingsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableView.swift; sourceTree = "<group>"; };
 		EDFBA0EE2DBC76ED002955E9 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
-		EDFBA17B2DBD8919002955E9 /* TopContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopContainerView.swift; sourceTree = "<group>"; };
 		EDFBA2792DBEB377002955E9 /* wave.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = wave.gif; sourceTree = "<group>"; };
+		EDFBA27B2DBEC783002955E9 /* PetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetView.swift; sourceTree = "<group>"; };
+		EDFBA27D2DBEC792002955E9 /* DialogueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogueView.swift; sourceTree = "<group>"; };
+		EDFBA27F2DBEC7A9002955E9 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		EDFBA28B2DBED0C3002955E9 /* TopContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopContainerView.swift; sourceTree = "<group>"; };
+		EDFBA28D2DBED3C1002955E9 /* BottomContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BottomContainerView.swift; path = "../pet old/HumanPetTranslator/HumanPetTranslator/Controllers/Translator/Views/BottomContainerView.swift"; sourceTree = SOURCE_ROOT; };
+		EDFBA2902DBEDE30002955E9 /* PermissionHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionHelper.swift; sourceTree = "<group>"; };
+		EDFBA2922DBEDE81002955E9 /* AlertHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +100,7 @@
 		ED8B3DE52DBA6D6300FE7B93 /* HumanPetTranslator */ = {
 			isa = PBXGroup;
 			children = (
+				EDFBA28F2DBEDE29002955E9 /* Helpers */,
 				ED8B3FD42DBB057000FE7B93 /* Extensions */,
 				ED8B3DF02DBA6DAA00FE7B93 /* App */,
 				ED8B3DEC2DBA6D6900FE7B93 /* Resources */,
@@ -184,8 +197,9 @@
 		ED8B3EA72DBAC6F500FE7B93 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				EDFBA17B2DBD8919002955E9 /* TopContainerView.swift */,
+				EDFBA28B2DBED0C3002955E9 /* TopContainerView.swift */,
 				ED8B3E9D2DBAC68D00FE7B93 /* TranslatorView.swift */,
+				EDFBA28D2DBED3C1002955E9 /* BottomContainerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -204,6 +218,9 @@
 			isa = PBXGroup;
 			children = (
 				ED8B3EB12DBAC89300FE7B93 /* ResultView.swift */,
+				EDFBA27F2DBEC7A9002955E9 /* HeaderView.swift */,
+				EDFBA27D2DBEC792002955E9 /* DialogueView.swift */,
+				EDFBA27B2DBEC783002955E9 /* PetView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -239,6 +256,15 @@
 				ED8B3FD22DBB056900FE7B93 /* UIFont+KonKhmerSleokchher.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		EDFBA28F2DBEDE29002955E9 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				EDFBA2902DBEDE30002955E9 /* PermissionHelper.swift */,
+				EDFBA2922DBEDE81002955E9 /* AlertHelper.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -324,18 +350,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED8B3DE62DBA6D6300FE7B93 /* AppDelegate.swift in Sources */,
+				EDFBA27C2DBEC78C002955E9 /* PetView.swift in Sources */,
+				EDFBA2912DBEDE3F002955E9 /* PermissionHelper.swift in Sources */,
 				ED8B3FD32DBB056A00FE7B93 /* UIFont+KonKhmerSleokchher.swift in Sources */,
 				ED8B3DF42DBA6F2A00FE7B93 /* K.swift in Sources */,
 				ED8B3E9A2DBAC61500FE7B93 /* TranslatorViewController.swift in Sources */,
 				EDFBA0EF2DBC76ED002955E9 /* SettingsTableViewCell.swift in Sources */,
+				EDFBA28E2DBED3C1002955E9 /* BottomContainerView.swift in Sources */,
 				ED8B3DE72DBA6D6300FE7B93 /* SceneDelegate.swift in Sources */,
 				ED8B3E9E2DBAC68D00FE7B93 /* TranslatorView.swift in Sources */,
-				EDFBA17C2DBD8924002955E9 /* TopContainerView.swift in Sources */,
 				ED8B3EAE2DBAC83700FE7B93 /* ClickerView.swift in Sources */,
 				ED8B3E9C2DBAC63400FE7B93 /* ClickerViewController.swift in Sources */,
 				EDFBA0C12DBC7261002955E9 /* SettingsTableView.swift in Sources */,
+				EDFBA2802DBEC7AC002955E9 /* HeaderView.swift in Sources */,
+				EDFBA28C2DBED0CA002955E9 /* TopContainerView.swift in Sources */,
 				ED8B3DE82DBA6D6300FE7B93 /* CustomTabBarController.swift in Sources */,
 				ED8B3EB22DBAC89300FE7B93 /* ResultView.swift in Sources */,
+				EDFBA27E2DBEC7A3002955E9 /* DialogueView.swift in Sources */,
+				EDFBA2932DBEDE81002955E9 /* AlertHelper.swift in Sources */,
 				ED8B3DF22DBA6E5500FE7B93 /* BaseView.swift in Sources */,
 				ED8B3EB42DBAC89A00FE7B93 /* ResultViewController.swift in Sources */,
 			);
