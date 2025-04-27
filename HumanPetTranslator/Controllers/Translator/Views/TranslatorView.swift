@@ -1,10 +1,16 @@
 import UIKit
 import AVFAudio
+import Gifu
 
 final class TranslatorView: BaseView {
     
     private var isCatButtonActive = false
     private var isDogButtonActive = true
+    
+    private lazy var waveGifImaveView: GIFImageView = {
+        $0.animate(withGIFNamed: "wave")
+        return $0
+    }(GIFImageView())
     
     private lazy var translatorLabel: UILabel = {
         $0.text = "Translator"
@@ -58,6 +64,14 @@ final class TranslatorView: BaseView {
         $0.isUserInteractionEnabled = true
         return $0
     }(UIView(frame: .zero))
+    
+    private lazy var processTranslationLabel: UILabel = {
+        $0.text = "Process of translation..."
+        $0.textColor = K.Colors.mainTextColor
+        $0.font = .konKhmerSleokchher(size: 16)
+        $0.textAlignment = .center
+        return $0
+    }(UILabel())
     
     private lazy var leftLabel: UILabel = {
         $0.text = "HUMAN"
@@ -297,9 +311,7 @@ private extension TranslatorView {
             DispatchQueue.main.async {
                 if granted {
                     self.startRecordingUI()
-                    print("Access granted ✅")
                 } else {
-                    print("Access denied ❌")
                     self.showMicrophoneAccessAlert()
                 }
             }
@@ -327,27 +339,57 @@ private extension TranslatorView {
     
     private func startRecordingUI() {
         micImageView.isHidden = true
+        waveGifImaveView.isHidden = false
         speakLabel.text = "Recording..."
-        // set deadline after!!!!
-        DispatchQueue.main.asyncAfter(deadline: .now()) {
-            self.stopRecordingUI()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                self.speakLabel.text = "Start Speak"
-                self.micImageView.isHidden = false
-            }
+        micContainerView.addSubview(waveGifImaveView)
+        
+        waveGifImaveView.snp.makeConstraints {
+            $0.leading.equalToSuperview().offset(7.5)
+            $0.trailing.equalToSuperview().offset(-7.5)
+            $0.top.equalToSuperview().offset(19)
+            $0.bottom.equalToSuperview().offset(-62)
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5)  { [self] in
+            stopRecordingUI()
         }
     }
     
     private func stopRecordingUI() {
         print("recording stopped")
-        let resultVC = ResultViewController()
+        self.addSubview(processTranslationLabel)
         
-        if let navigationController = self.window?.rootViewController as? UINavigationController {
-            navigationController.isNavigationBarHidden = true
-            navigationController.pushViewController(resultVC, animated: true)
-        } else {
-            print("Ошибка: UINavigationController не найден.")
+        processTranslationLabel.snp.makeConstraints {
+            $0.bottom.equalToSuperview().offset(-411)
+            $0.leading.equalToSuperview().offset(40)
+            $0.trailing.equalToSuperview().offset(-40)
         }
+        
+        translatorLabel.isHidden = true
+        topContainerView.isHidden = true
+        bottomContainerView.isHidden = true
+        processTranslationLabel.isHidden = false
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [self] in
+            let resultVC = ResultViewController()
+            
+            if let navigationController = self.window?.rootViewController as? UINavigationController {
+                navigationController.isNavigationBarHidden = true
+                navigationController.pushViewController(resultVC, animated: true)
+            } else {
+                print("Error: UINavigationController not found.")
+            }
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [self] in
+                speakLabel.text = "Start Speak"
+                micImageView.isHidden = false
+                waveGifImaveView.isHidden = true
+                translatorLabel.isHidden = false
+                topContainerView.isHidden = false
+                bottomContainerView.isHidden = false
+                processTranslationLabel.isHidden = true
+            }
+        }
+
     }
 }
 
@@ -373,6 +415,12 @@ extension TranslatorView {
         
         if let viewController = self.window?.rootViewController {
             viewController.present(alert, animated: true)
+        }
+    }
+    
+    func doTranslationProcess() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            
         }
     }
 }
