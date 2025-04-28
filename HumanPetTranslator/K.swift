@@ -1,5 +1,4 @@
 import UIKit
-import Foundation
 
 struct K {
     static let petPhrases = [
@@ -33,8 +32,6 @@ struct K {
         static let cellColorBackground: UIColor = UIColor(red: 214/255, green: 220/255, blue: 255/255, alpha: 1.0)
         static let resultDialogueBubbleBackground: UIColor = UIColor(red: 214/255, green: 220/255, blue: 255/255, alpha: 1.0)
     }
-    
-    
 }
 
 

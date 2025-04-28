@@ -32,19 +32,13 @@ final class DialogueView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupConstraints()
-        
-        layer.shadowColor = UIColor.black.cgColor
-        layer.shadowOpacity = 0.15
-        layer.shadowOffset = CGSize(width: 0, height: 4)
-        layer.shadowRadius = 4
+        setupShadow()
         isUserInteractionEnabled = true
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    
 }
 
 private extension DialogueView {
@@ -68,6 +62,13 @@ private extension DialogueView {
         }
         
         bringSubviewToFront(dialogueBubbleView)
+    }
+    
+    func setupShadow() {
+        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowOpacity = 0.15
+        layer.shadowOffset = CGSize(width: 0, height: 4)
+        layer.shadowRadius = 4
     }
     
     func setupDialogueBubbleView() {

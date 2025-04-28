@@ -20,7 +20,7 @@ final class TopContainerView: UIView {
         return $0
     }(UILabel())
     
-    lazy var arrowSwapButton: UIButton = {
+    private lazy var arrowSwapButton: UIButton = {
         $0.setImage(UIImage(named: "arrow_swap"), for: .normal)
         $0.contentMode = .scaleAspectFit
         $0.addTarget(self, action: #selector(handleArrowSwapButtonTapped), for: .touchUpInside)
@@ -36,11 +36,9 @@ final class TopContainerView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    
 }
 
-extension TopContainerView {
+private extension TopContainerView {
     func setupUI() {
         [leftLabel, arrowSwapButton, rightLabel].forEach {
             self.addSubview($0)

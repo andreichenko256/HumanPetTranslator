@@ -21,40 +21,40 @@ final class CustomTabBarController: UIViewController {
     private lazy var contentView: UIView = {
         $0.backgroundColor = .clear
         return $0
-    }(UIView(frame: .zero))
+    }(UIView())
     
-    lazy var containerView: UIView = {
+    private lazy var containerView: UIView = {
         $0.layer.cornerRadius = 16
         $0.translatesAutoresizingMaskIntoConstraints = false
         return $0
-    }(UIView(frame: .zero))
+    }(UIView())
 
     private lazy var buttonContainerView: UIView = {
         $0.backgroundColor = .white
         $0.layer.cornerRadius = 16
         return $0
-    }(UIView(frame: .zero))
+    }(UIView())
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         setupContentView()
         view.addSubview(containerView)
+        
         setupConstraints()
         setupButtons()
         updateViewController()
     }
-    
-    private func setupContentView() {
+}
+
+private extension CustomTabBarController {
+    func setupContentView() {
         view.addSubview(contentView)
         contentView.snp.makeConstraints {
             $0.top.leading.trailing.equalToSuperview()
             $0.bottom.equalToSuperview()
         }
     }
-}
-
-private extension CustomTabBarController {
+    
     func setupConstraints() {
         containerView.snp.makeConstraints {
             $0.height.equalTo(82)
@@ -116,8 +116,8 @@ private extension CustomTabBarController {
         imageView.contentMode = .scaleAspectFit
         imageView.tintColor = .systemGray
         imageView.image = image
-        imageView.snp.makeConstraints { make in
-            make.width.height.equalTo(24)
+        imageView.snp.makeConstraints {
+            $0.width.height.equalTo(24)
         }
 
         let label = UILabel()
@@ -128,17 +128,12 @@ private extension CustomTabBarController {
         [imageView, label].forEach({ stack.addArrangedSubview($0) })
         
         button.addSubview(stack)
-        stack.snp.makeConstraints { make in
-            make.center.equalToSuperview()
+        stack.snp.makeConstraints {
+            $0.center.equalToSuperview()
         }
         
         button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
         return button
-    }
-    
-    @objc func buttonTapped(_ sender: UIButton) {
-        guard let tab = Tab(rawValue: sender.tag) else { return }
-        selectedTab = tab
     }
     
     func updateSelection() {
@@ -181,5 +176,10 @@ private extension CustomTabBarController {
         newViewController.didMove(toParent: self)
         
         currentViewController = newViewController
+    }
+    
+    @objc func buttonTapped(_ sender: UIButton) {
+        guard let tab = Tab(rawValue: sender.tag) else { return }
+        selectedTab = tab
     }
 }

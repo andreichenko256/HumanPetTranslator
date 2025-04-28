@@ -1,6 +1,4 @@
 import UIKit
-import AVFAudio
-import Gifu
 
 protocol TranslatorViewDelegate: AnyObject {
     func didTapDogButton()
@@ -29,7 +27,6 @@ final class TranslatorView: BaseView {
         $0.isHidden = true
         return $0
     }(UILabel())
-    
     
     lazy var topContainerView: TopContainerView = {
         $0.arrowSwapButtonTapped = { [weak self] in
@@ -69,7 +66,6 @@ final class TranslatorView: BaseView {
 }
 
 private extension TranslatorView {
-    
     func setupConstraints() {
         [translatorLabel, topContainerView, bottomContainerView, mainImageView, processTranslationLabel].forEach {
             self.addSubview($0)
@@ -109,7 +105,4 @@ private extension TranslatorView {
         }
         
     }
-    
-    
-    
 }

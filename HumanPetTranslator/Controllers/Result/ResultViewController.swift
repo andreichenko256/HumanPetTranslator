@@ -1,7 +1,6 @@
 import UIKit
-import AVFoundation
 
-class ResultViewController: UIViewController {
+final class ResultViewController: UIViewController {
     
     lazy var resultView: ResultView = {
         $0.delegate = self

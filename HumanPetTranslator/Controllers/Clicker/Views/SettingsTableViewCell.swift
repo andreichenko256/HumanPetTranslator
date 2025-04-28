@@ -1,6 +1,6 @@
 import UIKit
 
-class SettingsTableViewCell: UITableViewCell {
+final class SettingsTableViewCell: UITableViewCell {
     
     private lazy var containerView: UIView = {
         $0.translatesAutoresizingMaskIntoConstraints = false

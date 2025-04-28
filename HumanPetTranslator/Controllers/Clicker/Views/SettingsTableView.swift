@@ -1,6 +1,6 @@
 import UIKit
 
-class SettingsTableView: UITableView {
+final class SettingsTableView: UITableView {
     override init(frame: CGRect, style: UITableView.Style) {
         super.init(frame: frame, style: style)
         setupTableView()

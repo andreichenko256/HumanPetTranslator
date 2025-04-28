@@ -1,13 +1,12 @@
 import UIKit
 import AVFAudio
 
-class TranslatorViewController: UIViewController {
+final class TranslatorViewController: UIViewController {
     
     var isHuman: Bool = true
     var isCat: Bool = false
     
-    
-    lazy var translatorView: TranslatorView = {
+    private lazy var translatorView: TranslatorView = {
         $0.delegate = self
         return $0
     }(TranslatorView())
@@ -32,7 +31,6 @@ private extension TranslatorViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 5) { [self] in
             stopRecordingUI()
         }
-        
     }
     
     func showMicrophoneAccessAlert() {
@@ -114,6 +112,7 @@ extension TranslatorViewController: TranslatorViewDelegate {
                 translatorView.mainImageView.alpha = 1
             }
         }
+        
         isCat = false
     }
     
@@ -129,6 +128,7 @@ extension TranslatorViewController: TranslatorViewDelegate {
                 translatorView.mainImageView.alpha = 1
             }
         }
+        
         isCat = true
     }
 }

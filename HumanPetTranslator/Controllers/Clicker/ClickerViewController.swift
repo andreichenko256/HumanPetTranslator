@@ -1,6 +1,6 @@
 import UIKit
 
-class ClickerViewController: UIViewController  {
+final class ClickerViewController: UIViewController  {
     
     private let settingsItems = [
         "Rate Us", "Share App",
@@ -31,7 +31,6 @@ extension ClickerViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SettingsTableViewCell") as! SettingsTableViewCell
         cell.configure(text: settingsItems[indexPath.row])
-        
         
         cell.onContainerTap = { [weak self] in
             self?.handleCellTap(at: indexPath)
@@ -72,7 +71,5 @@ extension ClickerViewController: UITableViewDataSource, UITableViewDelegate {
             default:
                 break
             }
-        
     }
-    
 }

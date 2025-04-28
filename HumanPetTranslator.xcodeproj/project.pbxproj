@@ -37,7 +37,7 @@
 		EDFBA2C02DBEF6F0002955E9 /* BottomContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFBA2BF2DBEF6F0002955E9 /* BottomContainerView.swift */; };
 		EDFBA2EE2DBF0564002955E9 /* meow.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EDFBA2ED2DBF0564002955E9 /* meow.mp3 */; };
 		EDFBA2F02DBF05C6002955E9 /* bark.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EDFBA2EF2DBF05C6002955E9 /* bark.mp3 */; };
-		EDFBA2F22DBF05FF002955E9 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFBA2F12DBF05FF002955E9 /* File.swift */; };
+		EDFBA2F22DBF05FF002955E9 /* AudioPlayerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFBA2F12DBF05FF002955E9 /* AudioPlayerHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,7 +71,7 @@
 		EDFBA2BF2DBEF6F0002955E9 /* BottomContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomContainerView.swift; sourceTree = "<group>"; };
 		EDFBA2ED2DBF0564002955E9 /* meow.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = meow.mp3; sourceTree = "<group>"; };
 		EDFBA2EF2DBF05C6002955E9 /* bark.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bark.mp3; sourceTree = "<group>"; };
-		EDFBA2F12DBF05FF002955E9 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		EDFBA2F12DBF05FF002955E9 /* AudioPlayerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -270,7 +270,7 @@
 			children = (
 				EDFBA2902DBEDE30002955E9 /* PermissionHelper.swift */,
 				EDFBA2922DBEDE81002955E9 /* AlertHelper.swift */,
-				EDFBA2F12DBF05FF002955E9 /* File.swift */,
+				EDFBA2F12DBF05FF002955E9 /* AudioPlayerHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -377,7 +377,7 @@
 				EDFBA0EF2DBC76ED002955E9 /* SettingsTableViewCell.swift in Sources */,
 				ED8B3DE72DBA6D6300FE7B93 /* SceneDelegate.swift in Sources */,
 				ED8B3E9E2DBAC68D00FE7B93 /* TranslatorView.swift in Sources */,
-				EDFBA2F22DBF05FF002955E9 /* File.swift in Sources */,
+				EDFBA2F22DBF05FF002955E9 /* AudioPlayerHelper.swift in Sources */,
 				EDFBA2C02DBEF6F0002955E9 /* BottomContainerView.swift in Sources */,
 				ED8B3EAE2DBAC83700FE7B93 /* ClickerView.swift in Sources */,
 				ED8B3E9C2DBAC63400FE7B93 /* ClickerViewController.swift in Sources */,

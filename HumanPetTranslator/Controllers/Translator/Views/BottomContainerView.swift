@@ -32,7 +32,7 @@ final class BottomContainerView: UIView {
         return $0
     }(UIButton())
     
-    lazy var micContainerView: UIView = {
+    private lazy var micContainerView: UIView = {
         $0.layer.cornerRadius = 16
         $0.backgroundColor = .white
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleMicContainerTapped))
@@ -83,7 +83,6 @@ final class BottomContainerView: UIView {
 private extension BottomContainerView {
     
     func setupUI() {
-        
         [micContainerView, verticalStack, waveGifImaveView].forEach {
             self.addSubview($0)
         }
@@ -115,6 +114,7 @@ private extension BottomContainerView {
             $0.trailing.bottom.top.equalToSuperview()
             $0.leading.equalTo(micContainerView.snp.trailing).inset(-35)
         }
+        setupVerticalStack()
         
         waveGifImaveView.snp.makeConstraints {
             $0.leading.equalToSuperview().offset(7.5)
@@ -123,8 +123,6 @@ private extension BottomContainerView {
             $0.bottom.equalToSuperview().offset(-62)
         }
         
-        
-        setupVerticalStack()
         setupShadow()
     }
     
@@ -160,6 +158,7 @@ private extension BottomContainerView {
                                                                            left: 12,
                                                                            bottom: 12,
                                                                            right: 12))
+        
         verticalStack.addArrangedSubview(paddedCat)
         verticalStack.addArrangedSubview(paddedDog)
     }

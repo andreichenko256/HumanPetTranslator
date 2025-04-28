@@ -15,7 +15,6 @@ class BaseView: UIView {
         super.layoutSubviews()
         layer.sublayers?.first(where: { $0 is CAGradientLayer })?.frame = bounds
     }
-    
 }
 
 private extension BaseView {
