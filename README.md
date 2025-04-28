@@ -3,7 +3,7 @@
 A modern iOS application that helps bridge the communication gap between humans and their pets through advanced translation technology.
 
 ## Screen Cast
-[Screen cast](https://drive.google.com/uc?id=1lyYwe43pOLD0R8A9xNc786cIZriBApzT)
+[Screen cast](https://drive.google.com/file/d/1lyYwe43pOLD0R8A9xNc786cIZriBApzT/view?usp=sharing)
 
 ## 🌟 Features
 
