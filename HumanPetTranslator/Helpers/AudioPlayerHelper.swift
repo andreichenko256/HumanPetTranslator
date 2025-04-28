@@ -1,6 +1,6 @@
 import AVFoundation
 
-class AudioPlayerHelper {
+final class AudioPlayerHelper {
     
     static let shared = AudioPlayerHelper()
     

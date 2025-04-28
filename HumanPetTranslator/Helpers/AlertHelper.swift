@@ -1,6 +1,6 @@
 import UIKit
 
-class AlertHelper {
+final class AlertHelper {
     static func showAlert(title: String, message: String, on viewController: UIViewController, completion: (() -> Void)? = nil) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         

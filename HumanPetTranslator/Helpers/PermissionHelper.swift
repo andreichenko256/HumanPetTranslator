@@ -1,6 +1,6 @@
 import AVFAudio
 
-class PermissionHelper {
+final class PermissionHelper {
     static func requestMicrophonePermission(completion: @escaping (Bool) -> Void) {
         AVAudioApplication.requestRecordPermission { granted in
             DispatchQueue.main.async {
