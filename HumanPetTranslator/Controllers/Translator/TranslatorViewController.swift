@@ -3,6 +3,10 @@ import AVFAudio
 
 class TranslatorViewController: UIViewController {
     
+    var isHuman: Bool = true
+    var isCat: Bool = false
+    
+    
     lazy var translatorView: TranslatorView = {
         $0.delegate = self
         return $0
@@ -53,6 +57,9 @@ private extension TranslatorViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [self] in
             let resultVC = ResultViewController()
             resultVC.resultView.petView.image = translatorView.mainImageView.image
+            resultVC.updateHumanStatus(isHuman: isHuman)
+            resultVC.resultView.isCat = isCat
+            
             if let navigationController = self.navigationController {
                 navigationController.isNavigationBarHidden = true
                 navigationController.pushViewController(resultVC, animated: true)
@@ -80,10 +87,11 @@ extension TranslatorViewController: TranslatorViewDelegate {
             translatorView.topContainerView.leftLabel.text = translatorView.topContainerView.rightLabel.text
             translatorView.topContainerView.rightLabel.text = tempText
         }, completion: nil)
+        
+        isHuman.toggle()
     }
     
     func didMicContainerTapped() {
-        print("Mic container tapped!")
         PermissionHelper.requestMicrophonePermission { granted in
             if granted {
                 self.startRecordingUI()
@@ -106,7 +114,7 @@ extension TranslatorViewController: TranslatorViewDelegate {
                 translatorView.mainImageView.alpha = 1
             }
         }
-        
+        isCat = false
     }
     
     func didTapCatButton() {
@@ -121,5 +129,6 @@ extension TranslatorViewController: TranslatorViewDelegate {
                 translatorView.mainImageView.alpha = 1
             }
         }
+        isCat = true
     }
 }

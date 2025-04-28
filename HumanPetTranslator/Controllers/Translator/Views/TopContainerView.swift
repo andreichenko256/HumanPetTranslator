@@ -3,7 +3,7 @@ import UIKit
 final class TopContainerView: UIView {
     
     var arrowSwapButtonTapped: (() -> Void)?
-    
+
     lazy var leftLabel: UILabel = {
         $0.text = "HUMAN"
         $0.font = .konKhmerSleokchher(size: 16)
@@ -67,6 +67,5 @@ extension TopContainerView {
     
     @objc func handleArrowSwapButtonTapped() {
         arrowSwapButtonTapped?()
-
     }
 }

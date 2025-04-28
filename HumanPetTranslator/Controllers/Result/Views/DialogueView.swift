@@ -1,22 +1,21 @@
 import UIKit
 
 final class DialogueView: UIView {
-    private var isStateChanged = false
     
-    private lazy var repeatCircleImageView: UIImageView = {
+    lazy var repeatCircleImageView: UIImageView = {
         $0.contentMode = .scaleAspectFit
         $0.image = UIImage(named: "repeat_circle")
         return $0
     }(UIImageView())
     
-    private lazy var dialogueBubbleView: UIView = {
+    lazy var dialogueBubbleView: UIView = {
         $0.backgroundColor = K.Colors.resultDialogueBubbleBackground
         $0.layer.cornerRadius = 16
         return $0
     }(UIView())
     
-    private lazy var dialogueLabel: UILabel = {
-        $0.text = "Example example example"
+    lazy var dialogueLabel: UILabel = {
+        $0.text = K.petPhrases.randomElement()
         $0.textAlignment = .center
         $0.font = .konKhmerSleokchher(size: 12)
         $0.textColor = K.Colors.mainTextColor
@@ -24,7 +23,7 @@ final class DialogueView: UIView {
         return $0
     }(UILabel())
     
-    private lazy var poligonImageView: UIImageView = {
+    lazy var poligonImageView: UIImageView = {
         $0.image = UIImage(named: "polygon")
         $0.isUserInteractionEnabled = false
         return $0
@@ -45,7 +44,7 @@ final class DialogueView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-
+    
 }
 
 private extension DialogueView {

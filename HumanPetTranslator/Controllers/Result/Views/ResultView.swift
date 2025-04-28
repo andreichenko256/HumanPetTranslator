@@ -1,7 +1,24 @@
 import UIKit
 
-class ResultView: BaseView {
+protocol ResultViewDelegate: AnyObject {
+    func didTapCloseButton()
+    func didTapRepeat()
+}
+
+final class ResultView: BaseView {
     weak var delegate: ResultViewDelegate?
+    
+    var isCat: Bool = false {
+        didSet {
+            updateBasedOnHuman()
+        }
+    }
+    
+    var isHuman: Bool = true {
+        didSet {
+            updateBasedOnHuman()
+        }
+    }
     
     private lazy var headerView: HeaderView = {
         $0.onCloseTapped = { [weak self] in
@@ -13,7 +30,7 @@ class ResultView: BaseView {
     private lazy var dialogueView = DialogueView()
     
     lazy var petView = PetView()
-    
+ 
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupConstraints()
@@ -50,8 +67,43 @@ private extension ResultView {
             $0.top.equalTo(headerView.snp.bottom).inset(-358)
         }
     }
-}
+    
+    func updateBasedOnHuman() {
+        if isHuman {
+            dialogueView.poligonImageView.isHidden = true
+            dialogueView.dialogueLabel.text = "Repeat"
+            dialogueView.snp.remakeConstraints {
+                $0.leading.equalToSuperview().offset(49)
+                $0.trailing.equalToSuperview().offset(-50)
+                $0.height.equalTo(54)
+                $0.bottom.equalTo(petView.snp.top).inset(-125)
+            }
+            
+            dialogueView.dialogueLabel.snp.remakeConstraints({
+                $0.trailing.equalToSuperview().offset(-111.5)
+                $0.centerY.equalToSuperview()
 
-protocol ResultViewDelegate: AnyObject {
-    func didTapCloseButton()
+            })
+            
+            dialogueView.addSubview(dialogueView.repeatCircleImageView)
+            dialogueView.repeatCircleImageView.snp.makeConstraints {
+                $0.centerY.equalToSuperview()
+                $0.trailing.equalTo(dialogueView.dialogueLabel.snp.leading).inset(-10)
+                $0.width.height.equalTo(16)
+            }
+            
+            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleDialogueViewTapped))
+            dialogueView.addGestureRecognizer(tapGesture)
+            if isCat {
+                AudioPlayerHelper.shared.playSound(named: "meow")
+            } else {
+                AudioPlayerHelper.shared.playSound(named: "bark")
+            }
+        }
+
+    }
+    
+    @objc func handleDialogueViewTapped() {
+        delegate?.didTapRepeat()
+    }
 }
